@@ -1,0 +1,12 @@
+fable user:references name:string{60} story:text summary:string{255} views:integer likes:integer
+# aggiungere published:boolean published_at:date
+# aggiungere età, valutare se in singoli campi age_from:integer{1} age_to:integer{1} o una combo age_id:integer{1}
+
+comment fable:references user:references description:text
+
+chart fable:references user:references reference_date:date point:integer
+
+rails g model liker fable_id:integer user_id:integer like:boolean
+
+# Non serve più???
+# rails g migration CreateFablesUsers fable_id:integer user_id:integer

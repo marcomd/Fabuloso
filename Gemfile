@@ -43,14 +43,20 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+gem 'activeadmin', '1.0.0.pre4' #git: 'https://github.com/activeadmin/activeadmin'
 gem 'active_leonardo'
 gem 'jquery-turbolinks'
 gem 'bourbon'
-gem 'rack-mini-profiler', group: :development
+# gem 'rack-mini-profiler', group: :development
 gem 'better_errors', group: :development
 gem 'awesome_print', group: :development
-gem 'devise', git: 'https://github.com/plataformatec/devise'
+# gem 'devise', git: 'https://github.com/plataformatec/devise'
 gem 'cancan'
-gem 'inherited_resources'
-gem 'formtastic', git: 'https://github.com/justinfrench/formtastic.git'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'ransack',             github: 'activerecord-hackery/ransack'
+gem 'draper',              '> 3.x'
+# gem 'inherited_resources', github: 'https://github.com/activeadmin/inherited_resources'
+# gem 'formtastic', git: 'https://github.com/justinfrench/formtastic.git'
+gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'react-rails', '~> 1.0'

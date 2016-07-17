@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fable:</strong>
+  <%= @chart.fable %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @chart.user %>
+</p>
+
+<p>
+  <strong>Reference date:</strong>
+  <%= @chart.reference_date %>
+</p>
+
+<p>
+  <strong>Point:</strong>
+  <%= @chart.point %>
+</p>
+
+<%= link_to 'Edit', edit_chart_path(@chart) %> |
+<%= link_to 'Back', charts_path %>

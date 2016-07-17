@@ -1,0 +1,36 @@
+$style_path: styles/active;
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+
+body.active_admin {
+  #active_admin_content {
+    padding: 10px 10px;
+  }
+  .price {
+    text-align: right;
+  }
+  table.index_table tr.odd.selected td {
+      background: none repeat scroll 0 0 #FFFFBD;
+  }
+  table.index_table tr.even.selected td {
+      background: none repeat scroll 0 0 #FFFFAC;
+  }
+  .table_tools_segmented_control li.selected {
+    a {
+      background-color: #E6E6E6;
+      cursor: pointer;
+    }
+    a:hover {
+      color: inherit;
+    }
+  }
+  #footer {
+    text-align: center;
+  }
+  input[type=text].datepicker.calendar {
+    background: #fff image-url($style_path + "/datepicker-input-icon.png") no-repeat 100% 7px;
+    padding-right: $date-range-filter-input-right-padding;
+    width: $date-range-filter-input-width;
+  }
+}

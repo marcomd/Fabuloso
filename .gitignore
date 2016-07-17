@@ -15,5 +15,6 @@
 /.idea
 lib/tasks/files/*
 /*.cmd
+/*.lnk
 /*.dat
 /config/initializers/secret_token.rb

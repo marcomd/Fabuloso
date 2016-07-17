@@ -1,0 +1,2 @@
+<%= react_component 'Records', { data: @fables,
+                                 likes: current_user.likes.where(like: true).map(&:fable_id) } %>

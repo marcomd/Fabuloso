@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fable: one
+  user: one
+  reference_date: 2016-07-12
+  point: 1
+
+two:
+  fable: two
+  user: two
+  reference_date: 2016-07-12
+  point: 1

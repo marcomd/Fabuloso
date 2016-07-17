@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<%= react_component 'FableShow', {  fable: @fable,
+                                    like: @fable.likers.map(&:user_id).include?(current_user.id),
+                                    url_update_likes: "/fables/#{@fable.id}/update_likes" } %>
+
+<!-- <p>
+  <strong>User:</strong>
+  <%= @fable.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fable.name %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @fable.story %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @fable.summary %>
+</p>
+
+<p>
+  <strong>Views:</strong>
+  <%= @fable.views %>
+</p>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @fable.likes %>
+</p>
+
+<%= link_to 'Edit', edit_fable_path(@fable) %> |
+<%= link_to 'Back', fables_path %> -->
