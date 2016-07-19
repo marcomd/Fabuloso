@@ -1,5 +1,5 @@
 ActiveAdmin.register Comment do
-  menu :if => proc{ can?(:read, Comment) }
+  menu :if => proc{ can?(:manage, Comment) }
 
   controller do
     load_resource :except => :index

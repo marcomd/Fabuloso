@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :fables,
             through: :likes
 
-  ROLES = %w[admin manager user guest]
+  ROLES = %w[admin editor user guest]
   scope :with_role, ->(role) { where("roles_mask & #{2**ROLES.index(role.to_s)} > 0 ") }
 
   def roles=(roles)
@@ -29,6 +29,9 @@ class User < ApplicationRecord
   def admin?
     self.role? 'admin'
   end
+  def access_admin_section?
+    self.roles? :admin, :editor
+  end
   def name option=:fullname
     return unless self.email
     # Get left email text
@@ -47,5 +50,6 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :registerable, :confirmable
 end

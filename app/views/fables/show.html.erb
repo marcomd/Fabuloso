@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <%= react_component 'FableShow', {  fable: @fable,
                                     like: @fable.likers.map(&:user_id).include?(current_user.id),
-                                    url_update_likes: "/fables/#{@fable.id}/update_likes" } %>
+                                    url_update_likes: "/fables/#{@fable.id}/update_likes",
+                                    i18n: I18n.t('attributes.fable').merge(singular_name: I18n.t('models.fable'), plural_name: I18n.t('models.fables'))
+                                  } %>
 
 <!-- <p>
   <strong>User:</strong>

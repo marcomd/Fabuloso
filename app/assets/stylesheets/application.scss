@@ -1,5 +1,12 @@
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "Cerulean/_bootswatch";
- @import "Cerulean/_variables";
- @import "Cerulean/_custom";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+// @import "cerulean/bootstrap";
+// @import "cerulean/_bootswatch";
+// @import "cerulean/_variables";
+// @import "cerulean/custom";
+@import "spacelab/bootstrap";
+@import "spacelab/_bootswatch";
+@import "spacelab/_variables";
+@import "custom_bootstrap";
+@import "devise_bootstrap_views";
+@import "font-awesome";

@@ -1,2 +1,5 @@
-<%= react_component 'Records', { data: @fables,
-                                 likes: current_user.likes.where(like: true).map(&:fable_id) } %>
+<%= react_component 'Records', {  data: @fables,
+                                  likes: @likes,
+                                  logged: !current_user.nil?,
+                                  i18n: I18n.t('attributes.fable').merge(singular_name: I18n.t('models.fable'), plural_name: I18n.t('models.fables'))
+                                } %>

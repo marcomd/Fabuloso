@@ -183,14 +183,17 @@ it:
 
   activerecord: &activerecord
     models: &models
-      chart: "Chart"
-      charts: "Charts"
+      chart: "Classifica"
+      charts: "Classifiche"
 
-      comment: "Comment"
-      comments: "Comments"
+      comment: "Commento"
+      comments: "Commenti"
 
-      fable: "Fable"
-      fables: "Fables"
+      fable: "Fiaba"
+      fables: "Fiabe"
+
+      user: "Utente"
+      users: "Utenti"
 
     attributes: &attributes
       id: "Id"
@@ -198,23 +201,23 @@ it:
       updated_at: "Data modifica"
       #Attributes zone - do not remove
       chart:
-        fable: "Fable"
-        user: "User"
-        reference_date: "Reference date"
-        point: "Point"
+        fable: "Favola"
+        user: "Utente"
+        reference_date: "Data riferimento"
+        point: "Punti"
 
       comment:
-        fable: "Fable"
-        user: "User"
-        description: "Description"
+        fable: "Favola"
+        user: "Utente"
+        description: "Descrizione"
 
       fable:
-        user: "User"
+        user: "Utente"
         name: "Name"
-        story: "Story"
-        summary: "Summary"
-        views: "Views"
-        likes: "Likes"
+        story: "Storia"
+        summary: "Trama"
+        views: "Visite"
+        likes: "Stelle"
 
     errors:
       template:
@@ -261,15 +264,15 @@ it:
         point: "Fill the point with an integer number"
 
       comment:
-        fable: "Choose the fable"
-        user: "Choose the user"
-        description: "Write something as description"
+        fable: "Scegli la favola"
+        user: "Scegli l'utente"
+        description: "Scrivi un commento"
 
       fable:
-        user: "Choose the user"
-        name: "Choose a good name for this fable"
-        story: "Write something as story"
-        summary: "Choose a good summary for this fable"
+        user: "Scegli l'utente"
+        name: "Scegli un buon nome, non dovrebbe essere molto lungo"
+        story: "Usa tutta la tua immaginazione"
+        summary: "Riassumi la storia in poche parole"
         views: "Fill the views with an integer number"
         likes: "Fill the likes with an integer number"
 

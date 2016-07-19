@@ -25,7 +25,7 @@
           console.error @props.url_update_likes, status, err
     render: ->
       React.DOM.div
-        className: 'container'
+        className: 'show'
         React.DOM.div
           className: 'jumbotron'
           React.DOM.h2 null, @props.fable.name
@@ -36,19 +36,23 @@
               React.DOM.p null, @props.fable.summary
             React.DOM.div
               className: 'col-lg-4'
-              "Views #{@props.fable.views || 0} - Likes #{@state.fable.likes || 0} "
+              "#{@props.i18n['views']} #{@state.fable.views || 0} - #{@props.i18n['likes']} #{@state.fable.likes || 0} "
               if @state.like
                 React.DOM.a
                   href: '#'
                   className: 'btn btn-danger'
                   onClick: @handleUpdateLikes
-                  'UnLike'
+                  #'UnLike'
+                  React.DOM.i
+                    className: 'fa fa-thumbs-down'
               else
                 React.DOM.a
                   href: '#'
-                  className: 'btn btn-default'
+                  className: 'btn btn-info'
                   onClick: @handleUpdateLikes
-                  'Like'
+                  #'Like'
+                  React.DOM.i
+                    className: 'fa fa-thumbs-up'
         React.DOM.div
           className: 'row'
           React.DOM.div

@@ -15,5 +15,10 @@ class ApplicationController < ActionController::Base
   def current_ability
     @current_ability ||= Ability.new(current_user)
   end
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, prepend: true
+
+  # restrict access to admin module for non-admin users
+  def authenticate_admin_user!
+    redirect_to(root_url, :alert => I18n.t('unauthorized.default')) unless current_user.try(:access_admin_section?)
+  end
 end

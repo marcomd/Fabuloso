@@ -1,7 +1,16 @@
+0.0.4 19th July, 2016
+---------------------
+* Fable views counter is incremented only first visit
+* New bootstrap layout spacelab
+* New login layout
+* Improved authorizations
+* Improved admin section and users management
+* Added i18n for english and italian
+
 0.0.3 17th July, 2016
 ---------------------
 * style e js per rendere dinamica la trasformazione del testo in maiuscolo
-* ora nella show, cliccando su like si aggiorna anche il numero dei like 
+* ora nella show, cliccando su like si aggiorna anche il numero dei like
 
 0.0.2 17th July, 2016
 ---------------------

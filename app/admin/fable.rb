@@ -1,6 +1,12 @@
 ActiveAdmin.register Fable do
   menu :if => proc{ can?(:read, Fable) }
 
+  # also look in to before_create if hidden on form
+  # before_build
+  before_create do |record|
+    record.user = current_user
+  end
+
   controller do
     load_resource :except => :index
   end
@@ -53,7 +59,7 @@ ActiveAdmin.register Fable do
 
   form do |f|
    f.inputs do
-     f.input :user
+     f.input :user if current_user.admin?
      f.input :name
      f.input :summary
      f.input :story

@@ -1,6 +1,9 @@
+language name:string{30} code:string{2}
+
 fable user:references name:string{60} story:text summary:string{255} views:integer likes:integer
 # aggiungere published:boolean published_at:date
 # aggiungere età, valutare se in singoli campi age_from:integer{1} age_to:integer{1} o una combo age_id:integer{1}
+# aggiungere la lingua language_id:integer{1}
 
 comment fable:references user:references description:text
 

@@ -1,9 +1,9 @@
 <ul class="nav navbar-nav navbar-right">
 <%- if user_signed_in? -%>
-  <li><%= link_to current_user.email, '/' %></li>
-  <li><%= link_to t("authentication.sign_out"), destroy_user_session_path, :method => :delete %></li>
+  <li><a href="/"><i class="fa fa-user"></i> <%= current_user.email %></a></li>
+  <li><%= link_to("<i class=\"fa fa-sign-out\"></i> #{t('authentication.sign_out')}".html_safe, destroy_user_session_path, :method => :delete) %></li>
 <%- else -%>
-  <li><%= link_to t("authentication.sign_up"), new_user_registration_path %></li>
-  <li><%= link_to t("authentication.sign_in"), new_user_session_path %></li>
+  <li><a href="<%= new_user_registration_path %>"><i class="fa fa-user-plus"></i> <%= t('authentication.sign_up') %></a></li>
+  <li><a href="<%= new_user_session_path %>"><i class="fa fa-sign-in"></i> <%= t('authentication.sign_in') %></a></li>
 <%- end -%>
 </ul>

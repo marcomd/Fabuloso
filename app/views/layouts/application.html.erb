@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
+          <div class="container-fluid">
             <div class="navbar-header">
               <a href="<%= root_url %>" class="navbar-brand"><%= CONFIG[:application][:name] %></a>
               <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -23,14 +23,19 @@
                 <li>
                   <a href="/fables/"><%= I18n.t('models.fables') %></a>
                 </li>
+<% if current_user.try(:access_admin_section?) -%>
                 <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Altro <span class="caret"></span></a>
-                  <ul class="dropdown-menu" aria-labelledby="themes">
-                    <li><a href="/charts"><%= I18n.t('models.charts') %></a></li>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="admin">Admin <span class="caret"></span></a>
+                  <ul class="dropdown-menu" aria-labelledby="admin">
+                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                    <li><a href="/admin/fables"><%= I18n.t('models.fables') %></a></li>
+<% if current_user.try(:admin?) -%>
                     <li class="divider"></li>
-                    <li><a href="/">Etc.</a></li>
+                    <li><a href="/admin/users"><%= I18n.t('models.users') %></a></li>
+<% end -%>
                   </ul>
                 </li>
+<% end -%>
 
               </ul>
               <%= render 'session' %>
@@ -47,12 +52,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <h2 class="section-heading"><%= CONFIG[:application][:name] %></h2>
-                        <hr class="primary">
-                        <p><%= "#{Rails.env} #{CONFIG[:application][:version]} 2016." %></p>
+                        <p><%= "#{CONFIG[:application][:name]} #{Rails.env} #{CONFIG[:application][:version]}." %></p>
+                        <p>All rights reserved © copyright 2016.</p>
                     </div>
-                    <div class="col-lg-4 text-center">
-                        <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <i class="fa fa-envelope-o fa-2x sr-contact"></i>
                         <p><a href="mailto:m.mastrodonato@gmail.com">Send me your feedback!</a></p>
                     </div>
                 </div>

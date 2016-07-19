@@ -11,12 +11,12 @@ class Ability
     #     can :read, :all
     #   end
     #
-    # The first argument to `can` is the action you are giving the user 
+    # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
     # here are :read, :create, :update and :destroy.
     #
-    # The second argument is the resource the user can perform the action on. 
+    # The second argument is the resource the user can perform the action on.
     # If you pass :all it will apply to every resource. Otherwise pass a Ruby
     # class of the resource.
     #
@@ -34,18 +34,24 @@ class Ability
     can :read, ActiveAdmin::Page, :name => "Dashboard"
 
     # ----- FABLE ----- #
-    can :read, Fable                                if user.role? :guest
-    can [:read, :create, :update], Fable            if user.role? :user
-    can [:read, :create, :update, :destroy], Fable  if user.role? :manager
+    can :read, Fable                                if user.roles? :guest, :user, :editor
+    if user.role? :editor
+      can :create, Fable
+      can [:update, :destroy], Fable, :user_id => user.id
+    end
 
     # ----- COMMENT ----- #
-    can :read, Comment                                if user.role? :guest
-    can [:read, :create, :update], Comment            if user.role? :user
-    can [:read, :create, :update, :destroy], Comment  if user.role? :manager
+    can :read, Comment                                if user.roles? :guest, :user, :editor
+    if user.roles? :user, :editor
+      can :create, Comment
+      can [:update, :destroy], Comment do |comment|
+        comment.user_id == user.id &&
+          (comment.created_at.to_date - Date.today).to_i == 0 &&
+          (Time.now - comment.created_at) < 600
+      end
+    end
 
     # ----- CHART ----- #
-    can :read, Chart                                if user.role? :guest
-    can [:read, :create, :update], Chart            if user.role? :user
-    can [:read, :create, :update, :destroy], Chart  if user.role? :manager
+    can :read, Chart                                if user.roles? :guest, :user, :editor
   end
 end

@@ -20,7 +20,7 @@
         className: 'records'
         React.DOM.h2
           className: 'title'
-          'Fables'
+          @props.i18n['plural_name']
         React.DOM.div
           className: 'row'
         for record in @state.records
@@ -30,5 +30,5 @@
           else
             like = true
           console.log "fable: #{record.id} index: #{index} like: #{like}"
-          React.createElement FableIndexItem, type: 'default', fable: record, like: like, url: "/fables/#{record.id}", url_update_likes: "/fables/#{record.id}/update_likes", handleUpdateLikes: @updateRecord
+          React.createElement FableIndexItem, type: 'default', fable: record, like: like, logged: @props.logged, url: "/fables/#{record.id}", url_update_likes: "/fables/#{record.id}/update_likes", i18n: @props.i18n, handleUpdateLikes: @updateRecord
           # React.createElement Record, key: record.id, record: record, handleDeleteRecord: @deleteRecord, handleEditRecord: @updateRecord

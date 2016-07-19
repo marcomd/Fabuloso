@@ -1,5 +1,5 @@
 ActiveAdmin.register Chart do
-  menu :if => proc{ can?(:read, Chart) }
+  menu :if => proc{ can?(:manage, Chart) }
 
   controller do
     load_resource :except => :index

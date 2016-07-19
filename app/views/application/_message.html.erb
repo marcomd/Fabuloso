@@ -1,3 +1,15 @@
-<%- flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, :class => "message #{name}" %>
+<%- flash.each do |name, text| -%>
+<%-
+css_name =
+  case name
+  when 'alert'   then 'warning'
+  when 'error'   then 'danger'
+  when 'notice'  then 'success'
+  else name.to_s
+  end
+-%>
+<div class="alert alert-dismissible alert-<%= css_name %> <%= name %>">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong><%= text %></strong>
+</div>
 <%- end -%>

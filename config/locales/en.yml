@@ -194,6 +194,9 @@ en:
       fable: "Fable"
       fables: "Fables"
 
+      user: "User"
+      users: "Users"
+
     attributes: &attributes
       id: "Id"
       created_at: "Created at"
