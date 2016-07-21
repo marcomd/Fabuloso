@@ -52,3 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
+
+#Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-6.9.4-Q8'
+# Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.2-Q8'
+Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-6.9.5-Q8'

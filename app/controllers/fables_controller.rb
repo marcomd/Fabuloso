@@ -7,6 +7,7 @@ class FablesController < InheritedResources::Base
   def index
     @fables = Fable.all
     @likes = current_user ? current_user.likes.where(like: true).map(&:fable_id) : []
+    @urls = @fables.map { |fable| fable.logo.url(:thumb) if fable.logo}
   end
 
   # GET /fables/1

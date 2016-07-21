@@ -220,6 +220,7 @@ en:
         summary: "Summary"
         views: "Views"
         likes: "Likes"
+        logo: "Playbill"
 
 
   formtastic:
@@ -246,6 +247,7 @@ en:
         summary: "Choose a good summary for this fable"
         views: "Fill the views with an integer number"
         likes: "Fill the likes with an integer number"
+        likes: "Load an image playbill for your story"
 
     actions:
       <<: *actions

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718213841) do
+ActiveRecord::Schema.define(version: 20160721222252) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(version: 20160718213841) do
     t.index ["user_id"], name: "index_charts_on_user_id"
   end
 
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "data_fingerprint"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "fable_id"
     t.integer  "user_id"
@@ -49,13 +65,17 @@ ActiveRecord::Schema.define(version: 20160718213841) do
 
   create_table "fables", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name",       limit: 60
+    t.string   "name",              limit: 60
     t.text     "story"
-    t.string   "summary",    limit: 255
+    t.string   "summary",           limit: 255
     t.integer  "views"
     t.integer  "likes"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.index ["user_id"], name: "index_fables_on_user_id"
   end
 

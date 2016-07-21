@@ -1,5 +1,6 @@
 <%= react_component 'Records', {  data: @fables,
                                   likes: @likes,
                                   logged: !current_user.nil?,
+                                  urls: @urls,
                                   i18n: I18n.t('attributes.fable').merge(singular_name: I18n.t('models.fable'), plural_name: I18n.t('models.fables'))
                                 } %>

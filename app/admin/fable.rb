@@ -12,7 +12,7 @@ ActiveAdmin.register Fable do
   end
 
   permit_params do
-    permitted = [:id, :user_id, :name, :story, :summary, :views, :likes, :created_at, :updated_at]
+    permitted = [:id, :user_id, :name, :story, :summary, :views, :likes, :created_at, :updated_at, :logo]
     permitted
   end
 
@@ -33,9 +33,10 @@ ActiveAdmin.register Fable do
    attributes_table do
      row :id
      row(:user)
+     row(:logo)                     {|fable| image_tag(fable.logo.url(:thumb), :height => '200')}
      row(:name)                     {|fable| fable.name}
      row(:summary)                  {|fable| fable.summary}
-     row(:story)                    {|fable| fable.story}
+     row(:story)                    {|fable| fable.story.html_safe}
      row(:views)                    {|fable| fable.views}
      row(:likes)                    {|fable| fable.likes}
      row :created_at
@@ -60,14 +61,17 @@ ActiveAdmin.register Fable do
   form do |f|
    f.inputs do
      f.input :user if current_user.admin?
+     f.input :logo, required: false #:as => :file #, :hint => f.template.image_tag(f.object.logo.url(:medium))
      f.input :name
      f.input :summary
-     f.input :story
+     f.input :story, as: :ckeditor, input_html: {rows: 25, class: 'ckeditor'}
     #  f.input :views
     #  f.input :likes
    end
    f.actions
   end
+
+
 
   #csv do
   #  column(:user)                     {|fable| fable.user}

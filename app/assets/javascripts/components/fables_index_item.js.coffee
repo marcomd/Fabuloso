@@ -29,8 +29,13 @@
           React.DOM.div
             className: 'panel-body'
             React.DOM.div
-              React.DOM.p
-                @props.fable.summary
+                React.DOM.div
+                  className: 'summary-box'
+                  if @props.logo_url
+                    React.DOM.img
+                      className: 'logo-box'
+                      src: @props.logo_url
+                  @props.fable.summary
               React.DOM.hr null
               React.DOM.a
                 href: @props.url

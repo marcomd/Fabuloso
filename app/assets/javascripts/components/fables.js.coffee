@@ -2,6 +2,7 @@
     getInitialState: ->
       records: @props.data
       likes: @props.likes
+      ilogo: 0
     getDefaultProps: ->
       records: []
     addRecord: (record) ->
@@ -24,11 +25,13 @@
         React.DOM.div
           className: 'row'
         for record in @state.records
+          logo_url = @props.urls[@state.ilogo]
+          @state.ilogo += 1
           index = @state.likes.indexOf record.id
           if index == -1
             like = false
           else
             like = true
-          console.log "fable: #{record.id} index: #{index} like: #{like}"
-          React.createElement FableIndexItem, type: 'default', fable: record, like: like, logged: @props.logged, url: "/fables/#{record.id}", url_update_likes: "/fables/#{record.id}/update_likes", i18n: @props.i18n, handleUpdateLikes: @updateRecord
+          #console.log "fable: #{record.id} index: #{index} like: #{like}"
+          React.createElement FableIndexItem, type: 'default', fable: record, like: like, logged: @props.logged, logo_url: logo_url, url: "/fables/#{record.id}", url_update_likes: "/fables/#{record.id}/update_likes", i18n: @props.i18n, handleUpdateLikes: @updateRecord
           # React.createElement Record, key: record.id, record: record, handleDeleteRecord: @deleteRecord, handleEditRecord: @updateRecord

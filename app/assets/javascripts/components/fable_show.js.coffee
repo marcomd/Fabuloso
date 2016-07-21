@@ -26,6 +26,8 @@
     render: ->
       React.DOM.div
         className: 'show'
+        React.DOM.img
+          src: @props.logo_url
         React.DOM.div
           className: 'jumbotron'
           React.DOM.h2 null, @props.fable.name
@@ -73,4 +75,5 @@
                 className: 'panel panel-info'
                 React.DOM.div
                   className: 'panel-body'
-                  @props.fable.story
+                  dangerouslySetInnerHTML: { __html: @props.fable.story }
+                  # @props.fable.story

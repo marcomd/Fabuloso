@@ -1,3 +1,8 @@
+0.0.5 21th July, 2016
+---------------------
+* Added a logo to fables
+* Now the story is writed with ckeditor and showed in html
+
 0.0.4 19th July, 2016
 ---------------------
 * Fable views counter is incremented only first visit
