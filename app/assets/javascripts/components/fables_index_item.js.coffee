@@ -25,7 +25,7 @@
             React.DOM.a
               href: @props.url
               @props.fable.name
-            " - #{@props.i18n['views']} #{@props.fable.views || 0} - #{@props.i18n['likes']} #{@props.fable.likes || 0}"
+            " - #{@props.i18n['views']} #{@props.fable.views || 0} - #{@props.i18n['likes']} #{@props.fable.likes || 0} - #{@props.i18n['comments']} #{@props.comments || 0}"
           React.DOM.div
             className: 'panel-body'
             React.DOM.div

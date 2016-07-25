@@ -1,3 +1,8 @@
+0.0.6 25th July, 2016
+---------------------
+* Added comments section to fable show
+* Addes comments number to fables list
+
 0.0.5 21th July, 2016
 ---------------------
 * Added a logo to fables

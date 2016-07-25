@@ -1,7 +1,10 @@
 <%= react_component 'FableShow', {  fable: @fable,
                                     like: @fable.likers.map(&:user_id).include?(current_user.id),
+                                    comments: @comments,
+                                    users: @users,
                                     url_update_likes: "/fables/#{@fable.id}/update_likes",
-                                    i18n: I18n.t('attributes.fable').merge(singular_name: I18n.t('models.fable'), plural_name: I18n.t('models.fables')),
+                                    i18n: I18n.t('attributes.fable').merge(singular_name: I18n.t('models.fable'), plural_name: I18n.t('models.fables'), comment: I18n.t('models.comment'), comments: I18n.t('models.comments')),
+                                    logged: !current_user.nil?,
                                     logo_url: @fable.logo.url(:thumb)
                                   } %>
 

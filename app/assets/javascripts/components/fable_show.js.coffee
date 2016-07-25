@@ -3,6 +3,7 @@
       like: @props.like
       fable: @props.fable
       story_uppercase: false
+      comments: @props.comments
     handleUppercase: (e) ->
       e.preventDefault()
       if @state.story_uppercase
@@ -23,6 +24,8 @@
           @replaceState fable: data, like: newvalue
         error: (xhr, status, err) =>
           console.error @props.url_update_likes, status, err
+    handleUpdateComments: (comments) ->
+      @setState comments: comments
     render: ->
       React.DOM.div
         className: 'show'
@@ -38,7 +41,7 @@
               React.DOM.p null, @props.fable.summary
             React.DOM.div
               className: 'col-lg-4'
-              "#{@props.i18n['views']} #{@state.fable.views || 0} - #{@props.i18n['likes']} #{@state.fable.likes || 0} "
+              "#{@props.i18n['views']} #{@state.fable.views || 0} - #{@props.i18n['likes']} #{@state.fable.likes || 0} - #{@props.i18n['comments']} #{@state.comments.length || 0} "
               if @state.like
                 React.DOM.a
                   href: '#'
@@ -77,3 +80,4 @@
                   className: 'panel-body'
                   dangerouslySetInnerHTML: { __html: @props.fable.story }
                   # @props.fable.story
+        React.createElement Comments, comments: @state.comments, users: @props.users, fable_id: @props.fable.id, logged: @props.logged, i18n: @props.i18n, handleUpdateComments: @handleUpdateComments

@@ -8,12 +8,18 @@ class FablesController < InheritedResources::Base
     @fables = Fable.all
     @likes = current_user ? current_user.likes.where(like: true).map(&:fable_id) : []
     @urls = @fables.map { |fable| fable.logo.url(:thumb) if fable.logo}
+    @h_fable_comments = Comment.where(fable_id: @fables.map(&:id)).
+                        group(:fable_id).
+                        select("fable_id, count(*) as 'count'").
+                        map{|c| {fable_id: c.fable_id, count: c.count} }
   end
 
   # GET /fables/1
   # GET /fables/1.json
   def show
     increment_views
+    @comments = @fable.comments #.order('id desc')
+    @users = User.where(id: @comments.map(&:user_id) << current_user.id)
   end
 
   # GET /fables/new
