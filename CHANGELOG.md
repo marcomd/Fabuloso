@@ -1,3 +1,7 @@
+0.0.7 18th August, 2016
+---------------------
+* Fixed likes update 
+
 0.0.6 25th July, 2016
 ---------------------
 * Added comments section to fable show

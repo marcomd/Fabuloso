@@ -1,9 +1,9 @@
 defaults: &defaults
   application:
     name: "Fabuloso"
-    version: "0.0.6"
+    version: "0.0.7"
     started_at: "12/07/2016"
-    updated_at: "25/07/2016"
+    updated_at: "18/08/2016"
   default_style: "active"
   ldap:
     host: "127.0.0.1"

@@ -16,7 +16,7 @@
   updateRecord: (record, data) ->
     index = @state.records.indexOf record
     records = React.addons.update(@state.records, { $splice: [[index, 1, data]] })
-    @replaceState records: records, likes: @state.likes
+    @replaceState records: records, likes: @state.likes, fable_comments: @state.fable_comments, ilogo: 0
   render: ->
     React.DOM.div
       className: 'fables'

@@ -19,9 +19,8 @@
         dataType: 'JSON'
         data: { like: newvalue }
         success: (data) =>
-          console.log "Ok: #{data}"
-          # @setState like: newvalue
-          @replaceState fable: data, like: newvalue
+          # console.log "Ok: #{data}"
+          @setState fable: data, like: newvalue
         error: (xhr, status, err) =>
           console.error @props.url_update_likes, status, err
     handleUpdateComments: (comments) ->
