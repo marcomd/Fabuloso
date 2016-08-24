@@ -10,7 +10,8 @@ class FablesController < InheritedResources::Base
     @urls = @fables.map { |fable| fable.logo.url(:thumb) if fable.logo}
     @h_fable_comments = Comment.where(fable_id: @fables.map(&:id)).
                         group(:fable_id).
-                        select("fable_id, count(*) as 'count'").
+                        #select("fable_id, count(*) as 'count'").
+                        select("fable_id, count(*)").
                         map{|c| {fable_id: c.fable_id, count: c.count} }
   end
 

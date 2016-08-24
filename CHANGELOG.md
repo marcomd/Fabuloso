@@ -1,11 +1,16 @@
+0.1.0 24th August, 2016
+---------------------
+* Closed the alpha and released the beta
+* Updated the Readme with the list of to do
+* Added support for PostgreSQL
+
 0.0.7 18th August, 2016
 ---------------------
-* Fixed likes update 
+* Fixed likes update
 
 0.0.6 25th July, 2016
 ---------------------
-* Added comments section to fable show
-* Addes comments number to fables list
+* Added comments section to fable show and comments number to fables list
 
 0.0.5 21th July, 2016
 ---------------------
@@ -23,8 +28,8 @@
 
 0.0.3 17th July, 2016
 ---------------------
-* style e js per rendere dinamica la trasformazione del testo in maiuscolo
-* ora nella show, cliccando su like si aggiorna anche il numero dei like
+* Added a button in the show to turn the text in capital letters, this facilitates the reading of the youngest
+* Now in the show, clicking like it also updates the number of likes
 
 0.0.2 17th July, 2016
 ---------------------

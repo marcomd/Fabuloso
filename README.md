@@ -1,24 +1,35 @@
-# README
+# FABULOSO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application allows you to collect the stories you invent for your children.
 
-Things you may want to cover:
+It let you to write and share your stories but also to read, comment and vote on those of others.
 
-* Ruby version
+# Some technical informations
 
-* System dependencies
+This app uses:
 
-* Configuration
+* Ruby 2.2.4
 
-* Database creation
+* Rails 5
 
-* Database initialization
+* React for the user interface
 
-* How to run the test suite
+* Activeadmin for the admin interface
 
-* Services (job queues, cache servers, search engines, etc.)
+* CKEditor to write in html format
 
-* Deployment instructions
+## Demo
 
-* ...
+Here you can [try it](https://fabuloso.herokuapp.com)
+
+## To do
+
+- [x] Improve the writing `v0.0.5`
+- [x] Add comments to every fable `v0.0.6`
+- [ ] Add the following fields to fable: age, published and published_at
+- [ ] Improve the list of fables with filters and pagination
+- [ ] Multilanguage
+- [ ] Add a home with a site description, summary of best fables etc.
+- [ ] Add fable creation to user interface
+- [ ] Add the single sign on with the major provider
+- [ ] Add the ability to share a fable
