@@ -1,3 +1,8 @@
+0.2.0 2th January, 2017
+---------------------
+* Fixed devise confirmation_token field definition in the migration
+* Mail configuration updated to use mailgun
+
 0.1.1 25th August, 2016
 ---------------------
 * Some minor fix

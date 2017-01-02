@@ -1,13 +1,13 @@
 require "development_mail_interceptor"
 
 ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.gmail.com",
+  :address              => ENV['GMAIL_SERVER'],
   :port                 => 587,
-  :domain               => "gmail.com",
+  :domain               => ENV['GMAIL_DOMAIN'],
   :user_name            => ENV['GMAIL_USER'],
   :password             => ENV['GMAIL_PWD'],
   :authentication       => "plain",
-  :enable_starttls_auto => true
+  :enable_starttls_auto => true,
 }
 
 ActionMailer::Base.perform_deliveries = true

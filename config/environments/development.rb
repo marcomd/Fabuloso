@@ -57,4 +57,4 @@ end
 # Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.2-Q8'
 Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-6.9.5-Q8'
 
-Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+Rails.application.routes.default_url_options[:host] = 'localhost:3025'
