@@ -1,3 +1,7 @@
+0.2.2 3th January, 2017
+---------------------
+* Fixed paperclip fable's logo path
+
 0.2.1 3th January, 2017
 ---------------------
 * Italian language by default

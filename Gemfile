@@ -64,10 +64,10 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'react-rails', '~> 1.0'
 gem 'devise-bootstrap-views', '~> 0.0.8'
 gem 'font-awesome-rails', '~> 4.6.3'
-# gem 'ckeditor', '~> 4.2.0'
-gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'ckeditor', '~> 4.2.2'
+# gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'paperclip', '~> 5.1.0'
-gem 'rails_12factor', group: :production
+#gem 'rails_12factor', group: :production
 
 group :assets do
   gem 'jquery-ui-rails', '~> 4.2.0'
