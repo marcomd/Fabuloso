@@ -8,7 +8,7 @@
           className: "panel panel-#{ @props.type } comment-box"
           React.DOM.div
             className: 'panel-heading'
-            React.DOM.b null, @props.author
+            React.DOM.b null, @props.author.replace /@.+$/, ''
             ' '
             dateFormat @props.comment.created_at
           React.DOM.div

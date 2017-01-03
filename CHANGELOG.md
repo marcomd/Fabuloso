@@ -1,3 +1,8 @@
+0.2.3 3th January, 2017
+---------------------
+* Added ckeditor assets to precompiled stuff
+* Removed the domain from the author's email for every comment
+
 0.2.2 3th January, 2017
 ---------------------
 * Fixed paperclip fable's logo path

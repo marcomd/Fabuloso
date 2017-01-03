@@ -14,7 +14,9 @@ module Fabuloso
       g.leosca_controller   :leosca_controller
     end
 
-    config.autoload_paths += %W(#{config.root}/lib/extras)
+    config.autoload_paths += %W(#{config.root}/lib/extras #{config.root}/app/models/ckeditor)
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w( ckeditor/* )
     I18n.enforce_available_locales = false
 
     # Settings in config/environments/* take precedence over those specified here.
