@@ -1,4 +1,8 @@
-0.2.0 2th January, 2017
+0.2.1 3th January, 2017
+---------------------
+* Italian language by default
+
+0.2.0 [☰](https://github.com/marcomd/Philter/compare/v0.1.0...v0.2.0) 2th January, 2017
 ---------------------
 * Fixed devise confirmation_token field definition in the migration
 * Mail configuration updated to use mailgun
